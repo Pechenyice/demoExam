@@ -17,6 +17,11 @@ public class App {
             for (Service l : list) {
                 System.out.println(l);
             }
+            ServiceManager.insert(new Service(-1, "GG", 0, 0, "GG", 0, "GG"));
+            list = ServiceManager.selectAll();
+            for (Service l : list) {
+                System.out.println(l);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

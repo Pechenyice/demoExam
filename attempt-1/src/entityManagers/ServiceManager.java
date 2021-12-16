@@ -8,10 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServiceManager {
-
     public static void insert(Service service) throws SQLException {
         try (Connection c = App.getConnection()) {
-            String sql = "insert into Service(Title, Cost, DurationInSeconds, Description, Discount, MainImagePath) values (?, ?, ?, ?, ?, ?);";
+            String sql = "insert into Service (Title, Cost, DurationInSeconds, Description, Discount, MainImagePath) values (?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = c.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             ps.setString(1, service.getTitle());
             ps.setInt(2, service.getCost());
@@ -25,33 +24,33 @@ public class ServiceManager {
             ResultSet keys = ps.getGeneratedKeys();
 
             if (keys.next()) {
+                System.out.println(keys);
                 service.setId(keys.getInt(1));
                 return;
             }
 
             throw new SQLException("Cannot insert Service");
         }
-
     }
 
     public static List<Service> selectAll() throws SQLException {
-        List<Service> services = new ArrayList<>();
+        ArrayList<Service> services = new ArrayList<>();
         try (Connection c = App.getConnection()) {
-            String sql = "select * from Service;";
+            String sql = "select * from Service";
             Statement s = c.createStatement();
 
-            ResultSet keys = s.executeQuery(sql);
+            ResultSet result = s.executeQuery(sql);
 
-            while (keys.next()) {
+            while (result.next()) {
                 services.add(
                         new Service(
-                                keys.getInt("ID"),
-                                keys.getString("Title"),
-                                keys.getInt("Cost"),
-                                keys.getInt("DurationInSeconds"),
-                                keys.getString("Description"),
-                                keys.getInt("Discount"),
-                                keys.getString("MainImagePath")
+                                result.getInt("id"),
+                                result.getString("Title"),
+                                result.getInt("Cost"),
+                                result.getInt("DurationInSeconds"),
+                                result.getString("Description"),
+                                result.getInt("Discount"),
+                                result.getString("MainImagePath")
                         )
                 );
             }
