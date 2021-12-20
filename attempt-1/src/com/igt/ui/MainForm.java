@@ -6,12 +6,17 @@ import com.igt.util.BaseForm;
 import com.igt.util.CustomTableModel;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.TableColumn;
 import java.awt.event.ItemEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 
 public class MainForm extends BaseForm {
     private JPanel mainPanel;
@@ -24,6 +29,8 @@ public class MainForm extends BaseForm {
     private JButton addServiceButton;
     private JTextPane hintText;
     private JButton authorButton;
+    private JTextField searchField;
+    private JButton clearButton;
     private CustomTableModel<Service> model;
 
     private List<Service> rootServices;
@@ -44,9 +51,28 @@ public class MainForm extends BaseForm {
         initTable();
         initBoxes();
         initButtons();
-
+        initSearch();
 
         setVisible(true);
+    }
+
+    private void initSearch() {
+        searchField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                applyFilters();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                applyFilters();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                applyFilters();
+            }
+        });
     }
 
     private void initTable() {
@@ -73,6 +99,19 @@ public class MainForm extends BaseForm {
         sortedById = true;
         sortedByName = false;
         updateCount(servicesTable.getRowCount(), servicesTable.getRowCount());
+
+        servicesTable.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 2) {
+                    int row = servicesTable.rowAtPoint(e.getPoint());
+                    if (row != -1) {
+                        dispose();
+                        new EditServiceForm(model.getRows().get(row));
+                    }
+                }
+            }
+        });
     }
 
     private void initButtons() {
@@ -84,6 +123,12 @@ public class MainForm extends BaseForm {
         authorButton.addActionListener(e -> {
             dispose();
             new AuthorForm();
+        });
+
+        clearButton.addActionListener(e -> {
+            searchField.setText("");
+            costCombo.setSelectedIndex(0);
+            discountCombo.setSelectedIndex(0);
         });
 
         idSortButton.addActionListener(e -> {
@@ -204,6 +249,8 @@ public class MainForm extends BaseForm {
                 break;
             }
         }
+
+        services.removeIf(service -> !service.getTitle().toLowerCase(Locale.ROOT).contains(searchField.getText().toLowerCase(Locale.ROOT)));
 
         model.setRows(services);
         model.fireTableDataChanged();
