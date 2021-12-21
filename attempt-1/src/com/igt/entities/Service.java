@@ -7,6 +7,7 @@ import javax.swing.*;
 import javax.swing.text.html.parser.Entity;
 import java.awt.*;
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 @Data
 public class Service {
@@ -27,10 +28,11 @@ public class Service {
         this.description = description;
         this.discount = discount;
         this.mainImagePath = mainImagePath;
+        this.mainImagePath = this.mainImagePath.replaceAll(Pattern.quote("\\"), "/");
 
         this.id = -1;
         try {
-            this.icon = new ImageIcon(ImageIO.read(Service.class.getClassLoader().getResource(mainImagePath)).getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+            this.icon = new ImageIcon(ImageIO.read(Service.class.getClassLoader().getResource(this.mainImagePath)).getScaledInstance(50, 50, Image.SCALE_DEFAULT));
         } catch (Exception e) {
         }
     }
