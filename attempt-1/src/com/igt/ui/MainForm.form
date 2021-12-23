@@ -53,7 +53,9 @@
         <children>
           <component id="e7a8f" class="javax.swing.JTable" binding="servicesTable">
             <constraints/>
-            <properties/>
+            <properties>
+              <selectionBackground color="-14308177"/>
+            </properties>
           </component>
         </children>
       </scrollpane>
