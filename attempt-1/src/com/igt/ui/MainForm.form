@@ -54,7 +54,7 @@
           <component id="e7a8f" class="javax.swing.JTable" binding="servicesTable">
             <constraints/>
             <properties>
-              <selectionBackground color="-14308177"/>
+              <selectionBackground color="-13783260"/>
             </properties>
           </component>
         </children>
