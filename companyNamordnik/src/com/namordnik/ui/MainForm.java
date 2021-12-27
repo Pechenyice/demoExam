@@ -10,7 +10,6 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.TableColumn;
-import javax.swing.text.TableView;
 import java.awt.event.ItemEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -28,6 +27,7 @@ public class MainForm extends BaseForm {
     private JComboBox filtrationBox;
     private JTextField searchField;
     private JLabel rowsCountLabel;
+    private JButton dropButton;
 
     private CustomTableModel<Product> model;
     private List<Product> products;
@@ -119,6 +119,11 @@ public class MainForm extends BaseForm {
             applyFilters();
         });
 
+        dropButton.addActionListener(e -> {
+            searchField.setText("");
+            filtrationBox.setSelectedIndex(0);
+        });
+
         addButton.addActionListener(e -> {
             dispose();
             new AddForm(800, 500);
@@ -152,7 +157,6 @@ public class MainForm extends BaseForm {
 
         int filtrationIndex = filtrationBox.getSelectedIndex();
         if (filtrationIndex != 0) {
-            System.out.println(filtrationBox.getItemAt(filtrationIndex));
             currentProducts.removeIf(product -> !product.getProductType().equals(filtrationBox.getItemAt(filtrationIndex)));
         }
 
