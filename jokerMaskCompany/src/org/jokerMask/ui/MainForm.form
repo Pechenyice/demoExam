@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.jokerMask.ui.MainForm">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="7" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="568" height="400"/>
+    </constraints>
+    <properties>
+      <font name="Comic Sans MS"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="d2801" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Comic Sans MS"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="6f292" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Comic Sans MS"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="fd363" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Comic Sans MS"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="31824" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Comic Sans MS"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <scrollpane id="a7813">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Comic Sans MS"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="1c202" class="javax.swing.JTable" binding="table">
+            <constraints/>
+            <properties>
+              <font name="Comic Sans MS"/>
+              <selectionBackground color="-11030865"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <grid id="d48c2" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Comic Sans MS"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="7a4a" class="javax.swing.JButton" binding="helpButton">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS"/>
+              <text value="Помощь"/>
+            </properties>
+          </component>
+          <component id="7e7b0" class="javax.swing.JButton" binding="aboutButton">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS"/>
+              <text value="О создателе"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="8a1c6" class="javax.swing.JButton" binding="createButton">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Comic Sans MS"/>
+          <text value="Создать запись"/>
+        </properties>
+      </component>
+      <grid id="de527" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Comic Sans MS"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="c45e0" class="javax.swing.JButton" binding="idSortButton">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS"/>
+              <text value="Отсортировать по ID"/>
+            </properties>
+          </component>
+          <component id="1c86" class="javax.swing.JButton" binding="clearFiltersButton">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS"/>
+              <text value="Сбросить все фильтры"/>
+            </properties>
+          </component>
+          <component id="3e278" class="javax.swing.JLabel" binding="rowsCountLabel">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS"/>
+              <text value="Отображено записей: 0/0"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="2af7b" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Comic Sans MS"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="d7e06" class="javax.swing.JComboBox" binding="articleCombo">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS"/>
+            </properties>
+          </component>
+          <component id="df7c9" class="javax.swing.JComboBox" binding="productionCombo">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS"/>
+              <model>
+                <item value="Все"/>
+                <item value="0-1"/>
+                <item value="2-3"/>
+                <item value="4-5"/>
+                <item value="6+"/>
+              </model>
+            </properties>
+          </component>
+          <grid id="efb02" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS"/>
+              <toolTipText value="Поиск"/>
+            </properties>
+            <border type="none" title="Поиск по title"/>
+            <children>
+              <component id="afe7d" class="javax.swing.JTextField" binding="search">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <font name="Comic Sans MS"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
